@@ -10,12 +10,14 @@
 export default {
     props: ["uid", "model", "meta"],
     methods: {
-        update: function () {
+        update: function() {
             // Tell parent that title has been updated
+            const item = this.model.items.$values.find(x => x.id === this.model.id)
+
             if (this.meta.notifyChange) {
                 this.$emit('update-title', {
                     uid: this.uid,
-                    title: this.model.items.$values[this.model.id]
+                    title: item.name
                 });
             }
         }

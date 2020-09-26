@@ -37,7 +37,7 @@ namespace Piranha.Services
         /// </summary>
         /// <param name="typeName">The type name</param>
         /// <returns>The new block</returns>
-        Task<object> CreateBlockAsync(string typeName);
+        Task<object> CreateBlockAsync(string typeName, bool managerInit = false);
 
         /// <summary>
         /// Initializes the given model.
